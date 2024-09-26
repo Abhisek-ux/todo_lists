@@ -1,0 +1,27 @@
+<div class="movie-container">
+  <input
+    type="text"
+    placeholder="Search movies..."
+  />
+
+  <button (click)="sortMovies()">Sort by Title</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Poster</th>
+        <th>Title</th>
+        <th>Year</th>
+        <th>Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let movie of filteredMovies">
+        <td><img [src]="movie.Poster" alt="{{ movie.Title }}" width="50" /></td>
+        <td>{{ movie.Title }}</td>
+        <td>{{ movie.Year }}</td>
+        <td>{{ movie.Type }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
